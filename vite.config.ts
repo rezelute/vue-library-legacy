@@ -26,7 +26,6 @@ export default defineConfig({
          entry: {
             index: path.resolve(__dirname, "src/index.ts"),
             "components/index": path.resolve(__dirname, "src/components/index.ts"),
-            "stores/index": path.resolve(__dirname, "src/stores/index.ts"),
             "composables/index": path.resolve(__dirname, "src/composables/index.ts"),
             "utils/index": path.resolve(__dirname, "src/utils/index.ts"),
             "content/index": path.resolve(__dirname, "src/content/index.ts"),
@@ -52,14 +51,7 @@ export default defineConfig({
          // When we mark these as an external dependency,
          // we tell Rollup not to include them in the final output bundle because the consumer is expected to provide it externally
          external: (id) =>
-            [
-               "vue",
-               "pinia",
-               "tailwindcss",
-               "tailwindcss-primeui",
-               "vee-validate",
-               "zod",
-            ].includes(id) ||
+            ["vue", "tailwindcss", "tailwindcss-primeui", "vee-validate", "zod"].includes(id) ||
             id.startsWith("primevue") ||
             id.startsWith("@primevue") ||
             id.startsWith("@primeuix") ||
@@ -69,7 +61,6 @@ export default defineConfig({
             globals: {
                vue: "Vue",
                primevue: "PrimeVue",
-               pinia: "Pinia",
             },
          },
       },
@@ -95,7 +86,6 @@ export default defineConfig({
             // limit declaration generation to public entry points only — without this, dts would process the whole tsconfig include
             "src/index.ts",
             "src/components",
-            "src/stores",
             "src/composables",
             "src/utils",
             "src/content",

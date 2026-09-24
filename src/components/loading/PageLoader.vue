@@ -53,9 +53,9 @@ export interface PageLoaderProps {
 }
 
 defineSlots<{
-   preloader?: (props: {}) => unknown
-   error?: (props: {}) => unknown
-   default?: (props: {}) => unknown
+   preloader?: () => unknown
+   error?: () => unknown
+   default?: () => unknown
 }>()
 withDefaults(defineProps<PageLoaderProps>(), {
    showLoading: false,
