@@ -5,9 +5,9 @@ export interface PageLoaderProps {
     errorText?: string;
 }
 type __VLS_Slots = {
-    preloader?: () => unknown;
-    error?: () => unknown;
-    default?: () => unknown;
+    preloader?: (props: Record<string, never>) => unknown;
+    error?: (props: Record<string, never>) => unknown;
+    default?: (props: Record<string, never>) => unknown;
 };
 declare const __VLS_base: import('vue').DefineComponent<PageLoaderProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<PageLoaderProps> & Readonly<{}>, {
     showLoading: boolean;
